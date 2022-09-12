@@ -18,4 +18,8 @@ export const AuthPageStyles = StyleSheet.create({
   submitBtn: {
     marginTop: 40,
   },
+  debug: {
+    alignSelf: 'flex-end',
+    marginTop: 'auto',
+  },
 });

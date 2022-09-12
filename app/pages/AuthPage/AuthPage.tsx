@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { Layout } from '../../components/Layout';
 import { Typography } from '../../components/UI/Typography';
@@ -21,18 +21,24 @@ import { Btn } from '../../components/UI/Btn';
 import { ROUTES } from '../../utils/router/router';
 import { FetchError } from '../../models/api/errors';
 import { VALIDATION_ERRORS } from '../../models/validators/errors';
+import { API_URL } from '@env';
 
 export const AuthPage = () => {
   const navigate = useNavigate();
   const [logIn, { isLoading, isError, error }] = useLoginMutation();
+  const [status, setStatus] = useState(API_URL);
 
   const handleSubmit = async (values: AuthorizationRequest) => {
+    setStatus('Отправка запроса');
     if (isLoading) {
       return;
     }
     const result = await logIn(values);
     if ('data' in result && result.data) {
+      setStatus('Ответ получен, переадресация');
       navigate(ROUTES.members);
+    } else {
+      setStatus('Ошибка запроса');
     }
   };
 
@@ -65,7 +71,6 @@ export const AuthPage = () => {
         <View style={{ marginRight: 20 }}>
           <BackBtn />
         </View>
-
         <Typography type="h1">Авторизация</Typography>
       </View>
 
@@ -85,6 +90,9 @@ export const AuthPage = () => {
             <Btn label="Войти" onPress={formik.handleSubmit} />
           </View>
         </FormikContext.Provider>
+      </View>
+      <View style={styles.debug}>
+        <Typography>{status}</Typography>
       </View>
     </View>
   );

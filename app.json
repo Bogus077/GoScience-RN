@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "app",
+    "name": "goScience",
     "slug": "goscience",
     "owner": "bogus077",
-    "version": "1.0.0",
+    "version": "1.0.4",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -23,10 +23,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.bogus077.goscience",
+      "versionCode": 4
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "99d9dae7-af1e-4fd4-aec0-1f1e8dde8b3a"
+      }
     }
   }
 }

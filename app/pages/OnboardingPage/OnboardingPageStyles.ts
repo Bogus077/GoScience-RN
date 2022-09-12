@@ -6,6 +6,7 @@ export const OnboardingPageStyles = StyleSheet.create({
     margin: 24,
     marginTop: 50,
     justifyContent: 'space-between',
+    backgroundColor: '#fff',
   },
   header: {
     flexDirection: 'row',
