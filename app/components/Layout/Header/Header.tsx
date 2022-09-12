@@ -10,7 +10,7 @@ type HeaderTypes = {
 export const Header = ({ title }: HeaderTypes) => {
   return (
     <View style={styles.main}>
-      <Typography style="h1">{title}</Typography>
+      <Typography type="h1">{title}</Typography>
     </View>
   );
 };

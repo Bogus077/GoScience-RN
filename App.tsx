@@ -5,75 +5,73 @@ import { MembersPage } from './app/pages/MembersPage';
 import { ProfilePage } from './app/pages/ProfilePage';
 import { SettingsPage } from './app/pages/SettingsPage';
 import { ROUTES } from './app/utils/router/router';
-import * as Font from 'expo-font';
+import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import logo from './assets/logo192.png';
 import { useCallback, useEffect, useState } from 'react';
 import { gStyles } from './assets/styles/gStyles';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { createStore } from './app/redux';
+import { persistStore } from 'redux-persist';
+import { AuthPage } from './app/pages/AuthPage';
+import { ProtectedRoutes } from './app/utils/router/ProtectedRoutes';
+import { OnboardingPage } from './app/pages/OnboardingPage';
+import { Typography } from './app/components/UI/Typography';
+import { SignUpPage } from './app/pages/SignUpPage';
 
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
-  const [appIsReady, setAppIsReady] = useState(false);
+  const [fontsLoaded] = useFonts({
+    'exo-bold': require('./assets/styles/fonts/Exo2-Bold.ttf'),
+    'exo-light': require('./assets/styles/fonts/Exo2-Light.ttf'),
+    'exo-medium': require('./assets/styles/fonts/Exo2-Medium.ttf'),
+    'exo-regular': require('./assets/styles/fonts/Exo2-Regular.ttf'),
+    'exo-thin': require('./assets/styles/fonts/Exo2-Thin.ttf'),
+  });
 
   useEffect(() => {
     async function prepare() {
-      try {
-        // Pre-load fonts, make any API calls you need to do here
-        await Font.loadAsync({
-          exo2: require('./assets/styles/fonts/Exo2-VariableFont_wght.ttf'),
-        });
-        // Artificially delay for two seconds to simulate a slow loading
-        // experience. Please remove this if you copy and paste the code!
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-      } catch (e) {
-        console.warn(e);
-      } finally {
-        // Tell the application to render
-        setAppIsReady(true);
-      }
+      await SplashScreen.preventAutoHideAsync();
     }
 
     prepare();
   }, []);
 
   const onLayoutRootView = useCallback(async () => {
-    if (appIsReady) {
-      // This tells the splash screen to hide immediately! If we call this after
-      // `setAppIsReady`, then we may see a blank screen while the app is
-      // loading its initial state and rendering its first pixels. So instead,
-      // we hide the splash screen once we know the root view has already
-      // performed layout.
+    if (fontsLoaded) {
       await SplashScreen.hideAsync();
     }
-  }, [appIsReady]);
+  }, [fontsLoaded]);
 
-  if (!appIsReady) {
+  if (!fontsLoaded) {
     return null;
   }
 
-  return (
-    <View onLayout={onLayoutRootView} style={gStyles.main}>
-      <NativeRouter>
-        <Routes>
-          <Route path={ROUTES.members} element={<MembersPage />} />
-          <Route path={ROUTES.profile} element={<ProfilePage />} />
-          <Route path={ROUTES.settings} element={<SettingsPage />} />
-        </Routes>
+  const store = createStore(); // Possible additional params to store init func
+  const persistor = persistStore(store);
 
-        {/* <View style={styles.container}>
-        <Image source={logo} style={{ width: 192, height: 192 }} />
-        <Text style={{ color: '#000' }}>Hello, World!!!</Text>
-        <StatusBar style="auto" />
-        <TouchableOpacity
-          onPress={() => alert('Hello, world!')}
-          style={{ backgroundColor: 'blue' }}
-        >
-          <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo!!</Text>
-        </TouchableOpacity>
-      </View> */}
-      </NativeRouter>
-    </View>
+  return (
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <View onLayout={onLayoutRootView} style={gStyles.main}>
+          {/* <Typography>goScience!!</Typography> */}
+          <NativeRouter>
+            <Routes>
+              <Route path={ROUTES.auth} element={<AuthPage />} />
+              <Route path={ROUTES.signup} element={<SignUpPage />} />
+              <Route path={ROUTES.onboard} element={<OnboardingPage />} />
+              <Route element={<ProtectedRoutes />}>
+                <Route path={ROUTES.members} element={<MembersPage />} />
+                <Route path={ROUTES.profile} element={<ProfilePage />} />
+                <Route path={ROUTES.settings} element={<SettingsPage />} />
+              </Route>
+            </Routes>
+          </NativeRouter>
+        </View>
+      </PersistGate>
+    </Provider>
   );
 }
 
