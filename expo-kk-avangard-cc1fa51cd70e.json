@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "expo-kk-avangard",
+  "private_key_id": "ed8845332c31ba0a904198bb70a38e6495f76c09",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC3fBiFQsOFcnT1\nvF2L93UPRD9iuqA1C0JJIoobesv9EUEFMS05Ie/Xyt+d6rDJni+3McMPAiBxle83\n40++ucIhWZkUyD24qvxykAJE5tcZMeO3n80DtSIK11e1A19Wr6HZsuSMyQtaz+QP\nwiyUgn4TsznyeBjKrlQW1p6Z98isiY3FtqATjsljG+fXivoAtC2/k4RUTGCV24QP\nE/1t4jDDgkuHmBZGrv8+uIQM7VNMHd7ZeroSpexITNkV86zB25Q0zpIS8qtSwO8h\nO3LmCCqEvEeNz4RHSvG7SS1gmkh78lPRwc20HBiD0/EUGX9e1py7suZyEH6LiAbr\nIBDmBCl7AgMBAAECggEAFwCfslUkXd5zezsaHynuqvNLXv02iG/Y54JE/hzu5dL7\n68K2gKsYfl0Ym5uIfj4ujTDX21HQ72x0iPUeUjLHe5bX8hsIYdZNv67+GdU2shnn\nCmYmNYjHs8Q7Yp4BncR27evXay7pFYFqfe9B13xkgeO+J/+WXBJuyE4vo+3EYpzF\nBdC32W6DiDdesjaNL7kfS0qENkFF7kRfX4B0jDx8YCc3AKXowNcqNxgYCtIQOMLz\nv7LgcwjEwJHaB1htUSY7u+Mw42Xk65tnbVVh/udg836yEm0PY4O1NsMx5iVlHw2b\nAg2+10PyWj3gYOwCVmEbXWO2jPMcnc5/1GVuu11CQQKBgQD8qp4vsKg19cWYyJ2z\nhuzTaNQCJfA0/L0Wo39ICu+/pgtuTYedJcAEF4CUj3EX+5Dxbf5MTgSBrKGCpYMY\nkttrYl0CZpv7S/pkLbEnhdPfUe4uG8jmey0DjxI92NlzgxqrGbf+I0Q4vTriPVuN\nVKnyybxLeYSsSdxbTpfYzdNbFQKBgQC559D4q306ugWUTlO+bZ4BNklewsD+fp/f\nNz1WhJD1VTBY3m3n1+ZpIqjhsIUcUTMMvsjzMUYwvF37qvEOhqIIWdSfLACt/EvO\nus5dsC1RlwXDKcPBbMylTxmAUG/3e1/yA8r3isYgJNCQP0xtGsSp/fT8qflzgWL1\nDkjOoOpWTwKBgQC67efWVJY+RbSI0nOJ7Jqt1fJ0HGlYalvisddrD1xMp6XxVz6r\nzs/+tvyT7IO5QI79b2kiPt4qqfNb2uPgfFYFXmJ9cjiYdJ+tGfjkyqfzooPabQf3\nLM4iwei3BQXr5eUHDSIIzUKdz7IOy2I+b5LEYugB1seHR6XVj5Hb/nsN+QKBgEO4\nJw4+Ycq/soKYmbbXdWQZo1ZqeST7eT81fxmCBs/nbUoiFEUNB3iq0HwN8h8jkQYG\nhWrZOylLpKylU1QoROPn3STyQXkfW3n94GiOYaPD8KxsDUvrVwysqKxuIKs0/PlK\n2meb3Joe7v5soGlqA9Osl85mGGEz85kyz+C9Cz/PAoGBAIVBeTtAA1NY8N4k+bMl\nH7BxaA73JnlxPtcRLECMUd1UI2K80fZoEHFNFYnmdHsEBPHcy8Dy5I3KX/mkbYQY\njuW3dB5awgHlK9HHWnL1cKRRcUr/uERlUA8RNKxXEysYmJc93+3fUquyup5mOYlt\nHu/EFTjUO6+ANUsGNUojAjt2\n-----END PRIVATE KEY-----\n",
+  "client_email": "expo-kk-avangard3-333@expo-kk-avangard.iam.gserviceaccount.com",
+  "client_id": "111113983537218899934",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/expo-kk-avangard3-333%40expo-kk-avangard.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

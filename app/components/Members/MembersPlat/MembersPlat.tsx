@@ -28,7 +28,13 @@ export const MembersPlat = ({
     >
       <View style={styles.summary}>
         <View style={styles.summary__header}>
-          <Typography size={14} font="bold">{`${plat} Взвод`}</Typography>
+          {plat === 5 ? (
+            <Typography size={14} font="bold">
+              Спортвзвод
+            </Typography>
+          ) : (
+            <Typography size={14} font="bold">{`${plat} Взвод`}</Typography>
+          )}
         </View>
 
         <View style={styles.summary__item}>

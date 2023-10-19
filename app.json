@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "goScience",
-    "slug": "goscience",
+    "name": "КК Авангард",
+    "slug": "kk-avangard",
     "owner": "bogus077",
-    "version": "1.0.4",
+    "version": "1.0.6",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -24,15 +24,15 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.bogus077.goscience",
-      "versionCode": 4
+      "package": "com.bogus077.kkavangard",
+      "versionCode": 6
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "99d9dae7-af1e-4fd4-aec0-1f1e8dde8b3a"
+        "projectId": "a6686499-5ba4-4d87-a1d0-16fdde7ee435"
       }
     }
   }

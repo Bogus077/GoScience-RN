@@ -8,6 +8,8 @@ import { LinkTo } from '../../components/UI/LinkTo';
 import { Typography } from '../../components/UI/Typography';
 import { ROUTES } from '../../utils/router/router';
 import { OnboardingPageStyles as styles } from './OnboardingPageStyles';
+import { Text } from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 export const OnboardingPage = () => {
   const navigate = useNavigate();
@@ -17,9 +19,9 @@ export const OnboardingPage = () => {
       <StatusBar style="auto" />
 
       <View style={styles.header}>
-        <Typography type="h1">go</Typography>
+        <Typography type="h1">КК</Typography>
         <Typography type="h1" color={COLORS.orange}>
-          Science
+          Авангард
         </Typography>
       </View>
 
@@ -29,14 +31,17 @@ export const OnboardingPage = () => {
       />
 
       <View style={styles.navigate}>
-        <Btn label="Создать аккаунт" onPress={() => navigate(ROUTES.signup)} />
-        <View style={styles.loginButton}>
-          <Typography size={16}>Уже есть аккаунт?</Typography>
-          <LinkTo
-            label="Войти"
-            size={16}
-            onPress={() => navigate(ROUTES.auth)}
-          />
+        <Btn label="Войти" onPress={() => navigate(ROUTES.auth)} />
+        <View>
+          <Text
+            style={{
+              marginTop: 20,
+              color: COLORS.text.secondary,
+              textAlign: 'center',
+            }}
+          >
+            Приложение для работы с онлайн-расходом Кадетского Корпуса Авангард
+          </Text>
         </View>
       </View>
     </View>
